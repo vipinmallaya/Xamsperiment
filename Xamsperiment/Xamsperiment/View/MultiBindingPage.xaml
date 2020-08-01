@@ -19,6 +19,8 @@
                     </MultiBinding>
                 </Label.Text>
             </Label>
+            <Label HorizontalOptions="Center" VerticalOptions="Center" Text="{Binding FallbackTest1, FallbackValue='Sample fallback value'}"/>
+            <Label HorizontalOptions="Center" VerticalOptions="Center" Text="{Binding FallbackTest, TargetNullValue='Null Value in object'}"/> 
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

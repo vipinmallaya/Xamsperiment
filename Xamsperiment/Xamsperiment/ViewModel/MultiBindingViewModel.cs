@@ -21,6 +21,8 @@ namespace Xamsperiment.ViewModel
         }
 
         string _middleName = string.Empty;
+        private string _fallbackTest;
+
         public string MiddleName
         {
             get
@@ -30,6 +32,22 @@ namespace Xamsperiment.ViewModel
             set
             {
                 OnPropertyChanged(ref _middleName, value, nameof(MiddleName));
+            }
+        }
+
+        public string FallbackTest
+        {
+            get => _fallbackTest;
+            set
+            {
+                try
+                {
+                    OnPropertyChanged(ref _fallbackTest, value, nameof(FallbackTest));
+                }
+                catch
+                {
+                    //Expecting null exception
+                }
             }
         }
 
