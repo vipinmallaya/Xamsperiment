@@ -7,10 +7,15 @@ using Xamarin.Essentials;
 namespace Xamsperiment.ViewModel
 {
     public class BaseViewModel : INotifyPropertyChanged
-    { 
-        protected void OnPropertyChanged(string fieldName)
+    {
+        protected void OnPropertyChanged<T>(ref T obj, T value, string fieldName)
         {
-            if(string.IsNullOrEmpty(fieldName))
+            if (value == null || obj.Equals(value))
+            {
+                return;
+            }
+            obj = value;
+            if (string.IsNullOrEmpty(fieldName))
             {
                 if (MainThread.IsMainThread)
                 {
@@ -18,9 +23,10 @@ namespace Xamsperiment.ViewModel
                 }
                 else
                 {
-                    MainThread.BeginInvokeOnMainThread(() => PropertyChanged(this, new PropertyChangedEventArgs(fieldName));
+                    MainThread.BeginInvokeOnMainThread(() => PropertyChanged(this, new PropertyChangedEventArgs(fieldName)));
                 }
             }
+
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
