@@ -4,23 +4,46 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             xmlns:converter="clr-namespace:Xamsperiment.View.Converter"
              xmlns:viewmodel="clr-namespace:Xamsperiment.ViewModel"
              x:Class="Xamsperiment.View.MultiBindingPage">
     <ContentPage.BindingContext>
         <viewmodel:MultiBindingViewModel/>
     </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <converter:MultiValueConverter x:Key="textConvertor"/>
+    </ContentPage.Resources>
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
             <Label HorizontalOptions="Center" VerticalOptions="Center">
                 <Label.Text>
-                    <MultiBinding StringFormat="{}{0} {1}">
-                        <Binding Path="FirstName" />
+                    <MultiBinding StringFormat="{}{0} {1}" >
+                        <Binding Path="FirstName"  />
                         <Binding Path="MiddleName" />
                     </MultiBinding>
                 </Label.Text>
             </Label>
             <Label HorizontalOptions="Center" VerticalOptions="Center" Text="{Binding FallbackTest1, FallbackValue='Sample fallback value'}"/>
-            <Label HorizontalOptions="Center" VerticalOptions="Center" Text="{Binding FallbackTest, TargetNullValue='Null Value in object'}"/> 
+            <Label HorizontalOptions="Center" VerticalOptions="Center" Text="{Binding FallbackTest, TargetNullValue='Null Value in object'}"/>
+
+            <Entry HorizontalOptions="FillAndExpand" VerticalOptions="Center" >
+                <Entry.Text>
+                    <MultiBinding Converter="{StaticResource textConvertor}" Mode="TwoWay">
+                        <Binding Path="State" Mode="TwoWay" />
+                        <Binding Path="VehicleNumber" Mode="TwoWay" />
+                    </MultiBinding>
+                </Entry.Text>
+            </Entry>
+            <Label HorizontalOptions="CenterAndExpand" VerticalOptions="Center" >
+                <Label.Text>
+                    <MultiBinding StringFormat="{} Input Vehicle Number : {0}-{1}">
+                        <Binding Path="State" />
+                        <Binding Path="VehicleNumber" />
+                    </MultiBinding>
+                </Label.Text>
+            </Label>
+
+            <Button HorizontalOptions="FillAndExpand" VerticalOptions="End" Text="Update Binding" Command="{Binding UpdateBindingCommand}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -10,20 +10,20 @@ namespace Xamsperiment.ViewModel
     {
         protected void OnPropertyChanged<T>(ref T obj, T value, string fieldName)
         {
-            if (value == null || obj.Equals(value))
+            if ((value == null || obj.Equals(value)) && obj != null)
             {
                 return;
             }
             obj = value;
-            if (string.IsNullOrEmpty(fieldName))
+            if (!string.IsNullOrEmpty(fieldName))
             {
                 if (MainThread.IsMainThread)
                 {
-                    PropertyChanged(this, new PropertyChangedEventArgs(fieldName));
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(fieldName));
                 }
                 else
                 {
-                    MainThread.BeginInvokeOnMainThread(() => PropertyChanged(this, new PropertyChangedEventArgs(fieldName)));
+                    MainThread.BeginInvokeOnMainThread(() => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(fieldName)));
                 }
             }
 
