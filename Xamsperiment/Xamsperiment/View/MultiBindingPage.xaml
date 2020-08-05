@@ -43,6 +43,15 @@
                 </Label.Text>
             </Label>
 
+            <Label HorizontalOptions="CenterAndExpand" VerticalOptions="Center" >
+                <Label.Text>
+                    <MultiBinding StringFormat="{} Employee Name: {0} {1}">
+                        <Binding Path="Employee.FirstName" />
+                        <Binding Path="Employee.LastName" />
+                    </MultiBinding>
+                </Label.Text>
+            </Label>
+
             <Button HorizontalOptions="FillAndExpand" VerticalOptions="End" Text="Update Binding" Command="{Binding UpdateBindingCommand}"/>
         </StackLayout>
     </ContentPage.Content>

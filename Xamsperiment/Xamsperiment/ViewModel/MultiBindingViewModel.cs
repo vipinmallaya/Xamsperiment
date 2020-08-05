@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Text;
 using Xamarin.Forms;
+using Xamsperiment.Core;
 
 namespace Xamsperiment.ViewModel
 {
@@ -13,6 +14,8 @@ namespace Xamsperiment.ViewModel
         private string _fallbackTest;
         private string _state = string.Empty;
         private string _vehicleNumber = string.Empty;
+        private Employee _employee;
+
         public string FirstName
         {
             get
@@ -24,9 +27,6 @@ namespace Xamsperiment.ViewModel
                 OnPropertyChanged(ref _firstName, value, nameof(FirstName));
             }
         }
-
-        
-
 
         public string MiddleName
         {
@@ -67,7 +67,7 @@ namespace Xamsperiment.ViewModel
                 OnPropertyChanged(ref _state, value, nameof(State));
             }
         }
-        
+
         public string VehicleNumber
         {
             get
@@ -80,18 +80,40 @@ namespace Xamsperiment.ViewModel
             }
         }
 
+        public Employee Employee
+        {
+            get
+            {
+                return _employee;
+            }
+            set
+            {
+                OnPropertyChanged(ref _employee, value, nameof(Employee));
+            }
+        }
+
         public Command UpdateBindingCommand { get; set; }
         public MultiBindingViewModel()
         {
             FirstName = "Test";
             MiddleName = "Name";
             UpdateBindingCommand = new Command(OnUpdateTextBindingAction);
+            Employee = new Employee()
+            {
+                FirstName = "Initial First",
+                LastName = "Initial Last"
+            };
         }
 
         private void OnUpdateTextBindingAction(object obj)
         {
             FirstName = "New Value";
             MiddleName = "New Middle Name";
+            Employee = new Employee()
+            {
+                FirstName = "FirstName",
+                LastName = "LastName"
+            };
         }
     }
 }
