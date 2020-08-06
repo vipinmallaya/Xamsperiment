@@ -33,14 +33,12 @@ namespace Xamsperiment.ViewModel
 
         private void LightThemeAction(object obj)
         {
-            App.Current.UserAppTheme = OSAppTheme.Light;
-            ThemeName = App.Current.UserAppTheme.ToString();
+            App.Current.UserAppTheme = OSAppTheme.Light;           
         }
 
         private void DarkThemeAction(object obj)
         {
-            App.Current.UserAppTheme = OSAppTheme.Dark;
-            ThemeName = App.Current.UserAppTheme.ToString();
+            App.Current.UserAppTheme = OSAppTheme.Dark;           
         }
     }
 }

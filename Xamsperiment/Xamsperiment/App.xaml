@@ -6,6 +6,22 @@
              mc:Ignorable="d"
              x:Class="Xamsperiment.App">
     <Application.Resources>
+        <ResourceDictionary>
+            <Color x:Key="dark_primary">Black</Color>
+            <Color x:Key="light_primary">White</Color>
+            <Style ApplyToDerivedTypes="True" TargetType="ContentPage" x:Key="AppThemePage" >
+                <Setter Property="BackgroundColor" Value="{AppThemeBinding Default= {StaticResource light_primary},
+                                                            Dark={StaticResource dark_primary}, 
+                                                            Light={StaticResource light_primary}}" />
+
+            </Style>
+            <Style ApplyToDerivedTypes="True" TargetType="Label" x:Key="LabelTheme">
+                <Setter Property="TextColor" Value="{AppThemeBinding Default={StaticResource light_primary},
+                                                            Dark={StaticResource light_primary},
+                                                            Light={StaticResource dark_primary}}"></Setter>
+                
+            </Style>
+        </ResourceDictionary>
 
     </Application.Resources>
 </Application>

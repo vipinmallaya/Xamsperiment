@@ -6,13 +6,14 @@
              mc:Ignorable="d"
              xmlns:viewmodel="clr-namespace:Xamsperiment.ViewModel"
              x:Class="Xamsperiment.View.AppThemePage"
-             Title="AppTheme">
+             Title="AppTheme"
+             Style="{StaticResource AppThemePage}">
     <ContentPage.BindingContext>
         <viewmodel:AppThemeViewModel/>
     </ContentPage.BindingContext>
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="{Binding ThemeName, StringFormat='Current Theme {0}'}"
+            <Label Text="{Binding ThemeName, StringFormat='Current Theme {0}'}" Style="{StaticResource LabelTheme}"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
             
