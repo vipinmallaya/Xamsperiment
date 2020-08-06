@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:viewmodel="clr-namespace:Xamsperiment.ViewModel"
+             x:Class="Xamsperiment.View.AppThemePage"
+             Title="AppTheme">
+    <ContentPage.BindingContext>
+        <viewmodel:AppThemeViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="{Binding ThemeName, StringFormat='Current Theme {0}'}"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            
+            <StackLayout Orientation="Horizontal"  VerticalOptions="EndAndExpand" 
+                HorizontalOptions="CenterAndExpand" >
+                <Button Text="Dark Theme"  Command="{Binding DarkThemeCommand}"/>
+                <Button Text="Light Theme" Command="{Binding LightThemeCommand}"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -6,7 +6,8 @@
              mc:Ignorable="d"
              xmlns:converter="clr-namespace:Xamsperiment.View.Converter"
              xmlns:viewmodel="clr-namespace:Xamsperiment.ViewModel"
-             x:Class="Xamsperiment.View.MultiBindingPage">
+             x:Class="Xamsperiment.View.MultiBindingPage"
+             Title="Multi Binding">
     <ContentPage.BindingContext>
         <viewmodel:MultiBindingViewModel/>
     </ContentPage.BindingContext>
@@ -51,7 +52,7 @@
                     </MultiBinding>
                 </Label.Text>
             </Label>
-
+            
             <Button HorizontalOptions="FillAndExpand" VerticalOptions="End" Text="Update Binding" Command="{Binding UpdateBindingCommand}"/>
         </StackLayout>
     </ContentPage.Content>
