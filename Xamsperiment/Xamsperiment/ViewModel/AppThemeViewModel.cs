@@ -15,13 +15,11 @@ namespace Xamsperiment.ViewModel
             set => OnPropertyChanged(ref _themeName, value, nameof(ThemeName));
         }
 
-        public Command DarkThemeCommand { get; set; }
-        public Command LightThemeCommand { get; set; }
+        public Command DarkThemeCommand => new Command(DarkThemeAction);
+        public Command LightThemeCommand=> new Command(LightThemeAction);
 
         public AppThemeViewModel()
-        {
-            DarkThemeCommand = new Command(DarkThemeAction);
-            LightThemeCommand = new Command(LightThemeAction);
+        {     
             ThemeName = App.Current.RequestedTheme.ToString();
             App.Current.RequestedThemeChanged += Current_RequestedThemeChanged;
         }

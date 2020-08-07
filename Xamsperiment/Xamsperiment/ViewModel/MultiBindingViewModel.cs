@@ -92,12 +92,11 @@ namespace Xamsperiment.ViewModel
             }
         }
 
-        public Command UpdateBindingCommand { get; set; }
+        public Command UpdateBindingCommand => new Command(OnUpdateTextBindingAction);
         public MultiBindingViewModel()
         {
             FirstName = "Test";
-            MiddleName = "Name";
-            UpdateBindingCommand = new Command(OnUpdateTextBindingAction);
+            MiddleName = "Name"; 
             Employee = new Employee()
             {
                 FirstName = "Initial First",

@@ -10,20 +10,16 @@ namespace Xamsperiment.ViewModel
 {
     public class MainViewModel : BaseViewModel
     {
-        public Command MultiBindingCommand { get; set; }
+        public Command MultiBindingCommand => new Command(MultiBindingAction);
         public Command ShapesCommand { get; set; }
-        public Command AppThemeCommand { get; set; }
+        public Command AppThemeCommand => new Command(AppThemeAction);
+
         private NavigationPage NavigationPage
         {
             get
             {
                 return App.Current.MainPage as NavigationPage;
             }
-        }
-        public MainViewModel()
-        {
-            MultiBindingCommand = new Command(MultiBindingAction);
-            AppThemeCommand = new Command(AppThemeAction);
         }
 
         private async void AppThemeAction(object obj)
