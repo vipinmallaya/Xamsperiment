@@ -4,12 +4,34 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="Xamsperiment.View.ShapesPage">
+             xmlns:viewModel="clr-namespace:Xamsperiment.ViewModel"
+             x:Class="Xamsperiment.View.ShapesPage"
+             Title="Xamarin Shape"
+             Appearing="ContentPage_Appearing">
+    <ContentPage.BindingContext>
+        <viewModel:ShapesViewModel></viewModel:ShapesViewModel>
+    </ContentPage.BindingContext>
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+              ColumnDefinitions="*"
+              RowDefinitions="Auto, *" >
+            
+            <Picker ItemsSource="{Binding Shapes}" SelectedItem="{Binding SelectedShape}" Title="Select Shape" 
+                    
+                     HorizontalOptions="CenterAndExpand"/>
+
+            <Line IsVisible="{Binding LineVisible}" 
+                  Grid.Row="1"
+                  Grid.Column="0"
+              Y1="20"
+              X1="10"
+              X2="10"
+              Y2="20"
+              StrokeLineCap="Round"
+              Stroke="Red"
+              StrokeThickness="12"
+                  x:Name="SimpleLine"/>   
+
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

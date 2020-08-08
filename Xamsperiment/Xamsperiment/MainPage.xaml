@@ -15,7 +15,7 @@
            HorizontalOptions="Center"
            VerticalOptions="CenterAndExpand" />
         <Button HorizontalOptions="FillAndExpand" VerticalOptions="End" Text="App Theme" Command="{Binding AppThemeCommand}"/>
-        <Button HorizontalOptions="FillAndExpand" VerticalOptions="End" Text="Update Binding" Command="{Binding ShapesCommand}"/>
+        <Button HorizontalOptions="FillAndExpand" VerticalOptions="End" Text="Shape" Command="{Binding ShapesCommand}"/>
         <Button Text="Multi Binding" Command="{Binding MultiBindingCommand}"></Button>
     </StackLayout>
 
