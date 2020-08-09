@@ -41,10 +41,9 @@
                 </Path>
                 <!--#endregion-->
 
-
                 <!--#region Initial Circle -->
                 <Path Grid.Row="0" Grid.Column="0" StrokeDashArray="1,1" StrokeDashOffset="6" Stroke="White" StrokeThickness="6"
-                      VerticalOptions="Start" HorizontalOptions="Start" IsVisible="true" >
+                      VerticalOptions="Start" HorizontalOptions="Start" Opacity="0" IsVisible="true" x:Name="InitialCircle">
                     <Path.Data>
                         <PathGeometry>
                             <PathGeometry.Figures>
@@ -52,7 +51,7 @@
                                     <PathFigure StartPoint="175,280">
                                         <PathFigure.Segments>
                                             <PathSegmentCollection>
-                                                <BezierSegment Point1="25,170" Point2="150,50" Point3="280,100" />
+                                                <BezierSegment Point1="25,170" Point2="150,50" Point3="280,100" x:Name="InitialCircleSegment" />
                                             </PathSegmentCollection>
                                         </PathFigure.Segments>
                                     </PathFigure>
@@ -64,8 +63,8 @@
                 <!--#endregion-->
 
                 <!--#region Long Hand Tick -->
-                <Path Grid.Row="0" Grid.Column="0" Fill="Blue"  Stroke="AliceBlue" StrokeThickness="3"
-                      VerticalOptions="Start" HorizontalOptions="Start" IsVisible="true" >
+                <Path Grid.Row="0" Grid.Column="0" Fill="Blue"  Stroke="AliceBlue" StrokeThickness="3" Opacity="0"
+                      VerticalOptions="Start" HorizontalOptions="Start" IsVisible="true" x:Name="LongTickHandle" >
                     <Path.Data>
                         <PathGeometry>
                             <PathGeometry.Figures>
@@ -89,8 +88,8 @@
                 <!--#endregion-->
 
                 <!--#region TIck Mark Short hand -->
-                <Path Grid.Row="0" Grid.Column="0"  Stroke="White" StrokeThickness="3"  
-                      VerticalOptions="Start" HorizontalOptions="Start" IsVisible="true" Fill="White" >
+                <Path Grid.Row="0" Grid.Column="0"  Stroke="White" StrokeThickness="3" Opacity="0"
+                      VerticalOptions="Start" HorizontalOptions="Start" IsVisible="true" Fill="White" x:Name="ShortHandle">
                     <Path.Data>
                         <PathGeometry>
                             <PathGeometry.Figures>

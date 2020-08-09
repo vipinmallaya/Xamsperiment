@@ -50,14 +50,47 @@ namespace Xamsperiment.View
 
         private async void ContentPage_Appearing(object sender, EventArgs e)
         {
-            await ShowTickMark();
             await Task.Delay(2000);
-            viewModel.ViewInitializationCompleted();
+            await InitialCircleFormationAnimation(); 
+            await ShowTickMark(); 
+            //viewModel.ViewInitializationCompleted();
+        }
+        private Task InitialCircleFormationAnimation()
+        {
+
+            return InitialCircle.FadeTo(1, 1000,Easing.Linear);
+
+                InitialCircleSegment.Animate<Point>(nameof(InitialCircleSegment.Point3),
+                transform: (input) =>
+                {
+                    Point newPoint = new Point(150, 50);
+                    if (InitialCircleSegment.Point3.X < 280)
+                    {
+                        newPoint.X = InitialCircleSegment.Point3.X + 1;
+                    }
+                    if (InitialCircleSegment.Point3.Y < 100)
+                    {
+                        newPoint.Y = InitialCircleSegment.Point3.Y + 1;
+                    }
+                    return newPoint;
+                }, 
+                callback:(inputPoint)=>
+                {     
+                    InitialCircleSegment.Point3 = inputPoint;
+                },
+                repeat: () =>
+                {
+                    return InitialCircleSegment.Point3.X != 280 && InitialCircleSegment.Point3.Y != 100;
+                 }) ;
         }
 
-        private Task ShowTickMark()
+        private async Task ShowTickMark()
         {
-            return Task.CompletedTask;
+            //InitialCircleSegment 
+            InitialCircle.FadeTo(0, 250);
+            await LongTickHandle.FadeTo(1, 1000);
+            
+            await ShortHandle.FadeTo(1, 1000); 
         }
     }
 }
