@@ -7,16 +7,40 @@
              xmlns:viewmodel="clr-namespace:Xamsperiment.ViewModel"
              x:Class="Xamsperiment.MainPage">
     <ContentPage.BindingContext>
-        <viewmodel:MainViewModel></viewmodel:MainViewModel>
+        <viewmodel:MainViewModel />
     </ContentPage.BindingContext>
     <StackLayout>
         <!-- Place new controls here -->
         <Label Text="Welcome to Xamarin.Forms!" 
            HorizontalOptions="Center"
            VerticalOptions="CenterAndExpand" />
+        <Path Stroke="Black"
+      StrokeThickness="1">
+            <Path.Data>
+                <PathGeometry>
+                    <PathGeometry.Figures>
+                        <PathFigureCollection>
+                            <PathFigure StartPoint="10,100">
+                                <PathFigure.Segments>
+                                    <PathSegmentCollection>
+                                        <ArcSegment Size="100,50"
+                                            RotationAngle="45"
+                                            IsLargeArc="True"
+                                            SweepDirection="CounterClockwise"
+                                            Point="200,100" />
+                                    </PathSegmentCollection>
+                                </PathFigure.Segments>
+                            </PathFigure>
+                        </PathFigureCollection>
+                    </PathGeometry.Figures>
+                </PathGeometry>
+            </Path.Data>
+        </Path>
+        <Button HorizontalOptions="FillAndExpand" VerticalOptions="End" Text="Shapes Animation" Command="{Binding ShapesAnimationCommand}"/>
         <Button HorizontalOptions="FillAndExpand" VerticalOptions="End" Text="App Theme" Command="{Binding AppThemeCommand}"/>
         <Button HorizontalOptions="FillAndExpand" VerticalOptions="End" Text="Shape" Command="{Binding ShapesCommand}"/>
         <Button Text="Multi Binding" Command="{Binding MultiBindingCommand}"></Button>
+        
     </StackLayout>
 
 </ContentPage>

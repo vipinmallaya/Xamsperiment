@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:viewmodel="clr-namespace:Xamsperiment.ViewModel"
+             x:Class="Xamsperiment.View.ShapesAnimationPage"
+             Title="Shapes Animation"
+             Appearing="ContentPage_Appearing"
+             >
+    <ContentPage.BindingContext>
+        <viewmodel:ShapesAnimationViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+              RowDefinitions="*" ColumnDefinitions="*">
+            <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                  RowDefinitions="*,Auto"
+                  ColumnDefinitions="*" >
+
+                <!--#region Background Pannel -->
+                <Path Grid.Row="0" Grid.Column="0" Fill="DarkBlue" Stroke="DarkBlue" VerticalOptions="FillAndExpand" IsVisible="true" Aspect="Fill" >
+                    <Path.Data>
+                        <PathGeometry>
+                            <PathGeometry.Figures>
+                                <PathFigureCollection>
+                                    <PathFigure StartPoint="0,0" >
+                                        <PathFigure.Segments>
+                                            <PathSegmentCollection>
+                                                <LineSegment Point="0,280"/>
+                                                <QuadraticBezierSegment Point1="410,280" Point2="410,280" />
+                                                <LineSegment Point="410,0"/>
+                                            </PathSegmentCollection>
+                                        </PathFigure.Segments>
+                                    </PathFigure>
+                                </PathFigureCollection>
+                            </PathGeometry.Figures>
+                        </PathGeometry>
+                    </Path.Data>
+                </Path>
+                <!--#endregion-->
+
+
+                <!--#region Initial Circle -->
+                <Path Grid.Row="0" Grid.Column="0" StrokeDashArray="1,1" StrokeDashOffset="6" Stroke="White" StrokeThickness="6"
+                      VerticalOptions="Start" HorizontalOptions="Start" IsVisible="true" >
+                    <Path.Data>
+                        <PathGeometry>
+                            <PathGeometry.Figures>
+                                <PathFigureCollection>
+                                    <PathFigure StartPoint="175,280">
+                                        <PathFigure.Segments>
+                                            <PathSegmentCollection>
+                                                <BezierSegment Point1="25,170" Point2="150,50" Point3="280,100" />
+                                            </PathSegmentCollection>
+                                        </PathFigure.Segments>
+                                    </PathFigure>
+                                </PathFigureCollection>
+                            </PathGeometry.Figures>
+                        </PathGeometry>
+                    </Path.Data>
+                </Path>
+                <!--#endregion-->
+
+                <!--#region Long Hand Tick -->
+                <Path Grid.Row="0" Grid.Column="0" Fill="Blue"  Stroke="AliceBlue" StrokeThickness="3"
+                      VerticalOptions="Start" HorizontalOptions="Start" IsVisible="true" >
+                    <Path.Data>
+                        <PathGeometry>
+                            <PathGeometry.Figures>
+                                <PathFigureCollection>
+                                    <PathFigure StartPoint="280,100" x:Name="TickMarkLongCurve"  >
+                                        <PathFigure.Segments>
+                                            <PathSegmentCollection>
+                                                <LineSegment Point="200,150" />
+                                                <LineSegment Point="215,170" />
+                                                <LineSegment Point="310,110" />
+                                                <QuadraticBezierSegment Point1="305,95"
+                                                        Point2="280,100" />
+                                            </PathSegmentCollection>
+                                        </PathFigure.Segments>
+                                    </PathFigure>
+                                </PathFigureCollection>
+                            </PathGeometry.Figures>
+                        </PathGeometry>
+                    </Path.Data>
+                </Path>
+                <!--#endregion-->
+
+                <!--#region TIck Mark Short hand -->
+                <Path Grid.Row="0" Grid.Column="0"  Stroke="White" StrokeThickness="3"  
+                      VerticalOptions="Start" HorizontalOptions="Start" IsVisible="true" Fill="White" >
+                    <Path.Data>
+                        <PathGeometry>
+                            <PathGeometry.Figures>
+                                <PathFigureCollection>
+                                    <PathFigure StartPoint="197,148" x:Name="TickMarkSHortCurve"  >
+                                        <PathFigure.Segments>
+                                            <PathSegmentCollection>
+                                                <LineSegment Point="211,139" />
+                                                <LineSegment Point="185,104" />
+                                                <QuadraticBezierSegment Point1="174,104"
+                                                        Point2="178,120" />
+                                                <LineSegment Point="198,148" />
+                                            </PathSegmentCollection>
+                                        </PathFigure.Segments>
+                                    </PathFigure>
+                                </PathFigureCollection>
+                            </PathGeometry.Figures>
+                        </PathGeometry>
+                    </Path.Data>
+                </Path>
+                <!--#endregion-->
+
+
+                <!--#region Login Signup Button -->
+                <StackLayout Grid.Row="0" Padding="10,10,10,10" HorizontalOptions="Center" VerticalOptions="End" Orientation="Horizontal"
+                              Opacity="0" IsVisible="{Binding IsLoginButtonVisible}" x:Name="LoginLayout">
+                    <Button Text="Signup" HorizontalOptions="Center" BackgroundColor="SkyBlue"  TextColor="White"/>
+                    <Button Text="Login" HorizontalOptions="Center" BackgroundColor="SkyBlue" TextColor="White" />
+                </StackLayout>
+
+                <!--#endregion-->
+
+                <!--#region Registration -->
+                <StackLayout Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="End" Padding="10,0,10,20" 
+                             IsVisible="{Binding IsSignupVisible}" Opacity="0" BackgroundColor="White" x:Name="SignupLayout">
+                    <Entry Placeholder="Email" />
+                    <Entry Placeholder="Password" />
+                    <Entry Placeholder="Confirm Password" />
+                    <Button Text="Sign Up" />
+                    <Label Text="Terms and conditions" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" />
+                </StackLayout>
+                <!--#endregion-->
+            </Grid>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

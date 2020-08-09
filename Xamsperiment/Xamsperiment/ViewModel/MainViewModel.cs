@@ -14,6 +14,7 @@ namespace Xamsperiment.ViewModel
         public Command MultiBindingCommand => new Command(MultiBindingAction);
         public Command ShapesCommand => new Command(ShapesAction);
         public Command AppThemeCommand => new Command(AppThemeAction);
+        public Command ShapesAnimationCommand => new Command(ShapesAnimationAction);
 
         private NavigationPage NavigationPage
         {
@@ -36,6 +37,11 @@ namespace Xamsperiment.ViewModel
         private async void ShapesAction(object obj)
         {
             await (App.Current.MainPage as NavigationPage).PushAsync(new ShapesPage());
+        }
+
+        private async void ShapesAnimationAction(object obj)
+        {
+            await (App.Current.MainPage as NavigationPage).PushAsync(new ShapesAnimationPage());
         }
     }
 }
