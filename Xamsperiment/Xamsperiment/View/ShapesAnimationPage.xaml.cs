@@ -24,7 +24,7 @@ namespace Xamsperiment.View
         }
 
         private async void ViewModel_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
-        {
+        {    
             switch (e.PropertyName)
             {
                 case nameof(ShapesAnimationViewModel.IsSignupVisible):

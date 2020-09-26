@@ -22,7 +22,7 @@
                 <!--#region Background Pannel -->
                 <Path Grid.Row="0" Grid.Column="0" Fill="DarkBlue" Stroke="DarkBlue" VerticalOptions="FillAndExpand" IsVisible="true" Aspect="Fill" >
                     <Path.Data>
-                        <PathGeometry>
+                        <PathGeometry >
                             <PathGeometry.Figures>
                                 <PathFigureCollection>
                                     <PathFigure StartPoint="0,0" >
@@ -45,7 +45,7 @@
                 <Path Grid.Row="0" Grid.Column="0" StrokeDashArray="1,1" StrokeDashOffset="6" Stroke="White" StrokeThickness="6"
                       VerticalOptions="Start" HorizontalOptions="Start" Opacity="0" IsVisible="true" x:Name="InitialCircle">
                     <Path.Data>
-                        <PathGeometry>
+                        <PathGeometry >
                             <PathGeometry.Figures>
                                 <PathFigureCollection>
                                     <PathFigure StartPoint="175,280">
@@ -66,7 +66,7 @@
                 <Path Grid.Row="0" Grid.Column="0" Fill="Blue"  Stroke="AliceBlue" StrokeThickness="3" Opacity="0"
                       VerticalOptions="Start" HorizontalOptions="Start" IsVisible="true" x:Name="LongTickHandle" >
                     <Path.Data>
-                        <PathGeometry>
+                        <PathGeometry x:Name="name">
                             <PathGeometry.Figures>
                                 <PathFigureCollection>
                                     <PathFigure StartPoint="280,100" x:Name="TickMarkLongCurve"  >
