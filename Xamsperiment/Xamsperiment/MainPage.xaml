@@ -14,7 +14,9 @@
         <Label Text="Welcome to Xamarin.Forms!" 
            HorizontalOptions="Center"
            VerticalOptions="CenterAndExpand" />
-        <Label Text="{Binding CurrentTime, StringFormat='Current Time {0}'}" />
+        <Label Text="{Binding VowelsCount, StringFormat='Vowels Count: {0}'}" />
+         
+        <Button HorizontalOptions="FillAndExpand" VerticalOptions="End" Text="Data Templates" Command="{Binding BindingLibraryInvokeCommand}"/>
         <Button HorizontalOptions="FillAndExpand" VerticalOptions="End" Text="Data Templates" Command="{Binding TemplateCommand}"/>
         <Button HorizontalOptions="FillAndExpand" VerticalOptions="End" Text="Shapes Animation" Command="{Binding ShapesAnimationCommand}"/>
         <Button HorizontalOptions="FillAndExpand" VerticalOptions="End" Text="App Theme" Command="{Binding AppThemeCommand}"/>

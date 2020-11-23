@@ -7,7 +7,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xamsperiment.Android", "Xam
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xamsperiment", "Xamsperiment\Xamsperiment\Xamsperiment.csproj", "{6115E8CB-4F56-4CEE-A346-2F91D52740D5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xamsperiment.Core", "Xamsperiment\Xamsperiment.Core\Xamsperiment.Core.csproj", "{B5D22A88-C43B-4A4A-839D-F0F12FA195E1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xamsperiment.Core", "Xamsperiment\Xamsperiment.Core\Xamsperiment.Core.csproj", "{B5D22A88-C43B-4A4A-839D-F0F12FA195E1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextAnalyzer", "TextAnalyzer\TextAnalyzer.csproj", "{9B0027F2-C939-46A7-BF22-785B9A902F11}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +33,10 @@ Global
 		{B5D22A88-C43B-4A4A-839D-F0F12FA195E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B5D22A88-C43B-4A4A-839D-F0F12FA195E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B5D22A88-C43B-4A4A-839D-F0F12FA195E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B0027F2-C939-46A7-BF22-785B9A902F11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B0027F2-C939-46A7-BF22-785B9A902F11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B0027F2-C939-46A7-BF22-785B9A902F11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B0027F2-C939-46A7-BF22-785B9A902F11}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

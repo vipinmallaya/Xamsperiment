@@ -17,7 +17,14 @@ namespace Xamsperiment.ViewModel
         public Command ShapesAnimationCommand => new Command(ShapesAnimationAction);
         public Command GenerateBarcodeCommand => new Command(GenerateBarcodeAction);
         public Command TemplateCommand => new Command(TemplateAction);
+        public Command BindingLibraryInvokeCommand => new Command(BindingLibraryInvokeAction);
 
+        private void BindingLibraryInvokeAction(object obj)
+        {
+            var textAnalyzer = DependencyService.Get<ITextAnalyserHelper>();
+                
+            VowelsCount = textAnalyzer.NumVowels("SampleTest");
+        }
 
         private string currentTIme;
 
@@ -27,11 +34,23 @@ namespace Xamsperiment.ViewModel
             set => OnPropertyChanged(ref currentTIme, value, nameof(CurrentTime));
         }
 
+        private int vowelsCount;
+        public int VowelsCount
+        {
+            get => vowelsCount;
+            set => OnPropertyChanged(ref vowelsCount, value, nameof(VowelsCount));
+        }
+
+        private int consonentCount;
+        public int ConsonentCount
+        {
+            get => consonentCount;
+            set => OnPropertyChanged(ref vowelsCount, value, nameof(ConsonentCount));
+        }
         private void TemplateAction(object obj)
         {
             NavigationPage.PushAsync(new TemplateSelector());
-        }
-
+        } 
 
         private NavigationPage NavigationPage
         {

@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
+    <Compile Include="TextAnalyserHelper.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -95,6 +96,10 @@
     <Folder Include="Resources\drawable\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\TextAnalyzer\TextAnalyzer.csproj">
+      <Project>{9b0027f2-c939-46a7-bf22-785b9a902f11}</Project>
+      <Name>TextAnalyzer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Xamsperiment\Xamsperiment.csproj">
       <Project>{61019FD7-FEBA-4085-8823-51C1FDEE209F}</Project>
       <Name>Xamsperiment</Name>

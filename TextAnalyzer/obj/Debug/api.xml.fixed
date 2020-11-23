@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<api>
+  <package name="com.xamarin.textcounter" jni-name="com/xamarin/textcounter">
+    <class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" jni-extends="Ljava/lang/Object;" final="true" name="BuildConfig" static="false" visibility="public" jni-signature="Lcom/xamarin/textcounter/BuildConfig;">
+      <constructor deprecated="not deprecated" final="false" name="BuildConfig" jni-signature="()V" bridge="false" static="false" type="com.xamarin.textcounter.BuildConfig" synthetic="false" visibility="public"></constructor>
+      <field deprecated="not deprecated" final="true" name="APPLICATION_ID" jni-signature="Ljava/lang/String;" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;com.xamarin.textcounter&quot;" visibility="public" volatile="false"></field>
+      <field deprecated="not deprecated" final="true" name="BUILD_TYPE" jni-signature="Ljava/lang/String;" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;release&quot;" visibility="public" volatile="false"></field>
+      <field deprecated="not deprecated" final="true" name="DEBUG" jni-signature="Z" static="true" transient="false" type="boolean" type-generic-aware="boolean" value="false" visibility="public" volatile="false"></field>
+      <field deprecated="not deprecated" final="true" name="FLAVOR" jni-signature="Ljava/lang/String;" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;&quot;" visibility="public" volatile="false"></field>
+      <field deprecated="not deprecated" final="true" name="VERSION_CODE" jni-signature="I" static="true" transient="false" type="int" type-generic-aware="int" value="1" visibility="public" volatile="false"></field>
+      <field deprecated="not deprecated" final="true" name="VERSION_NAME" jni-signature="Ljava/lang/String;" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;1.0&quot;" visibility="public" volatile="false"></field>
+    </class>
+    <class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" jni-extends="Ljava/lang/Object;" final="false" name="TextCounter" static="false" visibility="public" jni-signature="Lcom/xamarin/textcounter/TextCounter;">
+      <constructor deprecated="not deprecated" final="false" name="TextCounter" jni-signature="()V" bridge="false" static="false" type="com.xamarin.textcounter.TextCounter" synthetic="false" visibility="public"></constructor>
+      <method abstract="false" deprecated="not deprecated" final="false" name="numConsonants" jni-signature="(Ljava/lang/String;)I" bridge="false" native="false" return="int" jni-return="I" static="true" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="text" type="java.lang.String" jni-type="Ljava/lang/String;"></parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="numVowels" jni-signature="(Ljava/lang/String;)I" bridge="false" native="false" return="int" jni-return="I" static="true" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="text" type="java.lang.String" jni-type="Ljava/lang/String;"></parameter>
+      </method>
+    </class>
+  </package>
+</api>

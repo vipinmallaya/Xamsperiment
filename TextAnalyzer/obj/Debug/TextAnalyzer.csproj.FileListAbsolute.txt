@@ -1,0 +1,6 @@
+D:\QuickAccess\Source\Repos\Xamsperiment\TextAnalyzer\bin\Debug\TextAnalyzer.dll
+D:\QuickAccess\Source\Repos\Xamsperiment\TextAnalyzer\bin\Debug\TextAnalyzer.pdb
+D:\QuickAccess\Source\Repos\Xamsperiment\TextAnalyzer\obj\Debug\MonoAndroid,Version=v9.0.AssemblyAttributes.cs
+D:\QuickAccess\Source\Repos\Xamsperiment\TextAnalyzer\obj\Debug\TextAnalyzer.csproj.CoreCompileInputs.cache
+D:\QuickAccess\Source\Repos\Xamsperiment\TextAnalyzer\obj\Debug\TextAnalyzer.dll
+D:\QuickAccess\Source\Repos\Xamsperiment\TextAnalyzer\obj\Debug\TextAnalyzer.pdb

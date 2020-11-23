@@ -1,0 +1,12 @@
+com/xamarin/textcounter/BuildConfig = Com.Xamarin.Textcounter.BuildConfig
+  <init>()V = .ctor()
+  APPLICATION_ID = ApplicationId
+  BUILD_TYPE = BuildType
+  DEBUG = Debug
+  FLAVOR = Flavor
+  VERSION_CODE = VersionCode
+  VERSION_NAME = VersionName
+com/xamarin/textcounter/TextCounter = Com.Xamarin.Textcounter.TextCounter
+  <init>()V = .ctor()
+  numConsonants(Ljava/lang/String;)I = NumConsonants(string)
+  numVowels(Ljava/lang/String;)I = NumVowels(string)
