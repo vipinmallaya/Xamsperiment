@@ -14,33 +14,13 @@
         <Label Text="Welcome to Xamarin.Forms!" 
            HorizontalOptions="Center"
            VerticalOptions="CenterAndExpand" />
-        <Path Stroke="Black"
-      StrokeThickness="1">
-            <Path.Data>
-                <PathGeometry>
-                    <PathGeometry.Figures>
-                        <PathFigureCollection>
-                            <PathFigure StartPoint="10,100">
-                                <PathFigure.Segments>
-                                    <PathSegmentCollection>
-                                        <ArcSegment Size="100,50"
-                                            RotationAngle="45"
-                                            IsLargeArc="True"
-                                            SweepDirection="CounterClockwise"
-                                            Point="200,100" />
-                                    </PathSegmentCollection>
-                                </PathFigure.Segments>
-                            </PathFigure>
-                        </PathFigureCollection>
-                    </PathGeometry.Figures>
-                </PathGeometry>
-            </Path.Data>
-        </Path>
+        <Label Text="{Binding CurrentTime, StringFormat='Current Time {0}'}" />
+        <Button HorizontalOptions="FillAndExpand" VerticalOptions="End" Text="Data Templates" Command="{Binding TemplateCommand}"/>
         <Button HorizontalOptions="FillAndExpand" VerticalOptions="End" Text="Shapes Animation" Command="{Binding ShapesAnimationCommand}"/>
         <Button HorizontalOptions="FillAndExpand" VerticalOptions="End" Text="App Theme" Command="{Binding AppThemeCommand}"/>
         <Button HorizontalOptions="FillAndExpand" VerticalOptions="End" Text="Shape" Command="{Binding ShapesCommand}"/>
         <Button Text="Multi Binding" Command="{Binding MultiBindingCommand}"></Button>
-        
+        <Button Text="Generate Barcode" Command="{Binding GenerateBarcodeCommand}" /> 
     </StackLayout>
 
 </ContentPage>
