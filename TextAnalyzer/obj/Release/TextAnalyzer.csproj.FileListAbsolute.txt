@@ -1,7 +1,7 @@
-D:\QuickAccess\Source\Repos\Xamsperiment\TextAnalyzer\bin\Release\Jars\textanalyzer.aar
 D:\QuickAccess\Source\Repos\Xamsperiment\TextAnalyzer\bin\Release\TextAnalyzer.dll
 D:\QuickAccess\Source\Repos\Xamsperiment\TextAnalyzer\bin\Release\TextAnalyzer.pdb
 D:\QuickAccess\Source\Repos\Xamsperiment\TextAnalyzer\obj\Release\MonoAndroid,Version=v9.0.AssemblyAttributes.cs
+D:\QuickAccess\Source\Repos\Xamsperiment\TextAnalyzer\obj\Release\TextAnalyzer.csprojAssemblyReference.cache
 D:\QuickAccess\Source\Repos\Xamsperiment\TextAnalyzer\obj\Release\TextAnalyzer.csproj.CoreCompileInputs.cache
 D:\QuickAccess\Source\Repos\Xamsperiment\TextAnalyzer\obj\Release\TextAnalyzer.dll
 D:\QuickAccess\Source\Repos\Xamsperiment\TextAnalyzer\obj\Release\TextAnalyzer.pdb

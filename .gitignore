@@ -8,3 +8,9 @@
 /Xamsperiment/Xamsperiment.Android/bin/Debug
 /Xamsperiment/Xamsperiment.Android/obj
 /Xamsperiment/Xamsperiment.Core/obj
+*.dll
+/SampleBindingLIbrary/bin/Debug
+/SampleBindingLIbrary/obj
+/Xamsperiment/Xamsperiment/bin/Release/netstandard2.0
+/Xamsperiment/Xamsperiment.Android/bin/Release
+/Xamsperiment/Xamsperiment.Core/bin/Release/netstandard2.0

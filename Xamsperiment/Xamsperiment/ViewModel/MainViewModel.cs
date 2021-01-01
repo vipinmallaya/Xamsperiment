@@ -18,6 +18,12 @@ namespace Xamsperiment.ViewModel
         public Command GenerateBarcodeCommand => new Command(GenerateBarcodeAction);
         public Command TemplateCommand => new Command(TemplateAction);
         public Command BindingLibraryInvokeCommand => new Command(BindingLibraryInvokeAction);
+        public Command BehaviourCommand => new Command(BehaviourAction);
+
+        private async void BehaviourAction(object obj)
+        {
+            await NavigationPage.PushAsync(new BehaviourPage());
+        }
 
         private void BindingLibraryInvokeAction(object obj)
         {

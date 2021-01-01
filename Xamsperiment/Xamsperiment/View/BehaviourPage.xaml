@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:Xamsperiment.ViewModel"
+             xmlns:behaviour="clr-namespace:Xamsperiment.View.Behaviour"
+             x:Class="Xamsperiment.View.BehaviourPage"
+             x:Name="page">
+    <ContentPage.BindingContext>
+        <viewmodel:BehaviourViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" RowDefinitions="Auto,*">
+            <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" Grid.Row="0">
+                <Label Text="WelcomePlease enter Valid Email"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="StartAndExpand" TextColor="Red"
+                IsVisible="false"
+                       x:Name="EmailValidatorText"/>
+
+                <Entry Placeholder="Enter Email" Text="{Binding Email}" HorizontalOptions="FillAndExpand"  >
+                    <Entry.Behaviors>
+                        <behaviour:EmailValidatorBehaviour 
+                            ValidatorTextLabelName="EmailValidatorText" 
+                            ValidatorIsValid="{Binding IsValid, Mode=TwoWay}" 
+                             />
+                    </Entry.Behaviors>
+                </Entry>
+
+            </StackLayout>
+
+            <Button Text="Submit" IsEnabled="{Binding IsValid}"  HorizontalOptions="CenterAndExpand" VerticalOptions="End"   Grid.Row="1"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

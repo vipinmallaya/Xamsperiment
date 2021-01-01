@@ -31,7 +31,8 @@
     </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout>
-            <ListView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" ItemTemplate="{StaticResource studentTemplateSelector  }">
+            <ListView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" 
+                      ItemTemplate="{StaticResource studentTemplateSelector  }">
                 <ListView.ItemsSource>
                     <x:Array Type="{x:Type model:Student}">
                         <model:Student Name="Steve" Age="21" TotalMarks="50" />
