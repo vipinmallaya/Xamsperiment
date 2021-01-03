@@ -9,7 +9,7 @@
         <viewmodel:BehaviourViewModel />
     </ContentPage.BindingContext>
     <ContentPage.Content>
-        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" RowDefinitions="Auto,*">
+        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" RowDefinitions="Auto,Auto,*">
             <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" Grid.Row="0">
                 <Label Text="WelcomePlease enter Valid Email"
                 VerticalOptions="CenterAndExpand" 
@@ -18,9 +18,28 @@
                        x:Name="EmailValidatorText"/>
 
                 <Entry Placeholder="Enter Email" Text="{Binding Email}" HorizontalOptions="FillAndExpand"  >
-                    <Entry.Behaviors>
+                    <Entry.Behaviors> 
                         <behaviour:EmailValidatorBehaviour 
                             ValidatorTextLabelName="EmailValidatorText" 
+                            ValidationMessage="Enter valid email"
+                            ValidatorIsValid="{Binding IsValid, Mode=TwoWay}" 
+                             /> 
+                    </Entry.Behaviors>
+                </Entry>
+
+            </StackLayout>
+            <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" Grid.Row="1">
+                <Label Text="WelcomePlease enter Valid Email"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="StartAndExpand" TextColor="Red"
+                IsVisible="false"
+                       x:Name="PhoneValidatorText"/>
+
+                <Entry Placeholder="Enter Phone" Text="{Binding Phone}" HorizontalOptions="FillAndExpand"  >
+                    <Entry.Behaviors>
+                        <behaviour:EntryMandatoryFiledValidator 
+                            ValidatorTextLabelName="PhoneValidatorText" 
+                            ValidationMessage="Enter valid Phone"
                             ValidatorIsValid="{Binding IsValid, Mode=TwoWay}" 
                              />
                     </Entry.Behaviors>
@@ -28,7 +47,7 @@
 
             </StackLayout>
 
-            <Button Text="Submit" IsEnabled="{Binding IsValid}"  HorizontalOptions="CenterAndExpand" VerticalOptions="End"   Grid.Row="1"/>
+            <Button Text="Submit" Command="{Binding SubmitCommand}"  HorizontalOptions="CenterAndExpand" VerticalOptions="End"   Grid.Row="2"/>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

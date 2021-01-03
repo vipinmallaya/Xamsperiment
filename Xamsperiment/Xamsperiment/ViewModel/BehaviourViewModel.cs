@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Xamarin.Forms;
 
 namespace Xamsperiment.ViewModel
 {
@@ -14,14 +15,28 @@ namespace Xamsperiment.ViewModel
             set => OnPropertyChanged(ref email, value, nameof(Email));
         }
 
-        private bool isValid;
+        private string phone;
 
-        public bool IsValid
+        public string Phone
         {
-            get => isValid;
-            set => OnPropertyChanged(ref isValid, value, nameof(IsValid));
+            get => phone;
+            set => OnPropertyChanged(ref phone, value, nameof(Phone));
         }
 
 
+        public Command SubmitCommand { get; set; }
+
+        public BehaviourViewModel()
+        {
+            SubmitCommand = new Command(SubmitAction);
+        }
+
+        private void SubmitAction(object obj)
+        {
+            if(string.IsNullOrEmpty(Email) || string.IsNullOrEmpty(Phone))
+            {
+                IsValid = false;
+            }
+        }
     }
 }

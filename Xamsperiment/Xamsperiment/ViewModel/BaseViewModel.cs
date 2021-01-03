@@ -8,12 +8,17 @@ namespace Xamsperiment.ViewModel
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
+        private bool? isValid;
+
+        public bool? IsValid
+        {
+            get => isValid;
+            set => OnPropertyChanged(ref isValid, value, nameof(IsValid));
+        }
+
         protected void OnPropertyChanged<T>(ref T obj, T value, string fieldName)
         {
-            if (obj != null && (value == null || obj.Equals(value)))
-            {
-                return;
-            }
+             
             obj = value;
             if (!string.IsNullOrEmpty(fieldName))
             {
