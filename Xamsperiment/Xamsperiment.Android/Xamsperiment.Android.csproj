@@ -23,6 +23,9 @@
     <AndroidHttpClientHandlerType>Xamarin.Android.Net.AndroidClientHandler</AndroidHttpClientHandlerType>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <DotfuscatorXamarinCliPath>D:\VSFiles\2019\Community\Common7\IDE\Extensions\PreEmptiveSolutions\DotfuscatorCE\dotfuscatorCLI.exe</DotfuscatorXamarinCliPath>
+    <DotfuscatorXamarinConfigFileName>DotfuscatorConfig.xml</DotfuscatorXamarinConfigFileName>
+    <DotfuscatorXamarinGenerateNewConfigFile>true</DotfuscatorXamarinGenerateNewConfigFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -43,6 +46,7 @@
     <WarningLevel>4</WarningLevel>
     <AndroidManagedSymbols>true</AndroidManagedSymbols>
     <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+    <DotfuscatorXamarinEnabled>true</DotfuscatorXamarinEnabled>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Mono.Android" />
